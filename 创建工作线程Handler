@@ -1,0 +1,20 @@
+// 创建工作线程Handler前必须先为工作线程创建Looper对象,创建工作线程Looper和Handler的典型代码如下所示,
+// 特别要注意代码的执行顺序.
+
+class LooperThread  extends  Thread{
+    public Handler mHandler;
+
+    @Override
+    public void run() {
+
+        Looper.prepare();
+
+        mHandler = new Handler(){
+            @Override
+            public void handleMessage(Message msg) {
+                // process incoming message here
+            }
+        };
+        Looper.loop(); // this method will Loop execution,so it must be last.
+    }
+}
