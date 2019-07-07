@@ -1,3 +1,4 @@
+// --- 创建工作线程Handler ---
 // 创建工作线程Handler前必须先为工作线程创建Looper对象,创建工作线程Looper和Handler的典型代码如下所示,
 // 特别要注意代码的执行顺序.
 
@@ -18,3 +19,8 @@ class LooperThread  extends  Thread{
         Looper.loop(); // this method will Loop execution,so it must be last.
     }
 }
+
+
+// --- HandlerThread的使用 ---
+// HandlerThread是Thread的子类它用于方便地实现一个带有Looper的线程,
+// 必须调用start()方法启动HandlerThread. HandlerThread.
