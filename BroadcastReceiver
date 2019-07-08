@@ -1,0 +1,30 @@
+// 创建广播接收器
+// 广播接收器需要实现为BroadcastReceiver类的子类,并重写onReceive()方法来接受以Intent对象的参数
+
+public class MyReceiver extends BroadcastReceiver {
+   @Override
+   public void onReceive(Context context, Intent intent) {
+      Toast.makeText(context, "Intent Detected.", Toast.LENGTH_LONG).show();
+   }
+}
+
+// 广播自定义意图需要添加的语句
+public void broadcastIntent(View view){
+    Intent intent = new Intent();
+    intent.setAction("cn.programmer.CUSTOM_INTENT");
+    intent.setComponent(new ComponentName("cn.programmer","cn.programmer.MyReceiver"));
+    sendBroadcast(intent);
+}
+
+//使用动态注册和接触广播接收器
+// ① 创建一个BroadcastReceiver实例
+BroadcastReceiver br = new MyBroadcastReceiver();
+
+// ② 创建一个IntentFilter并且通过registerReceiver(BroadcastReceiver, IntentFilter)来注册
+IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+    filter.addAction(Intent.ACTION_AIRPLANE_MODE_CHANGED);
+    this.registerReceiver(br, filter);
+// ③确认不再使用BroadcastReceiver时要取消注册.
+
+unregisterReceiver(receiver);
+ 
