@@ -27,3 +27,11 @@
 ⑥    取出该节点的属性，用xmlGetProp取出其属性值。
 
 ⑦    xmlFreeDoc函数关闭文档指针，并清除本文档中所有节点动态申请的内存。
+
+### 本示例操作
+利用linu自带的libxml2
+是使用g++编译
+g++ main.cpp -o main -lxml2 -I/usr/include/libxml2
+
+运行
+./main res.xml
