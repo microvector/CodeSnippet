@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<school>
+    <schoolinfo>
+        <phoneNumber>110</phoneNumber>
+        <schoolmaster>MicroVector</schoolmaster>
+        <address part="southern of china">shang hai</address>
+    </schoolinfo>
+    <schoolinfo>
+        <phoneNumber>120</phoneNumber>
+        <schoolmaster>BigBrother</schoolmaster>
+        <address part="southern of china">shan zhen</address>
+    </schoolinfo>
+    <companyinfo>
+        <name>MicroSoftChina</name>
+        <address part="northern of china ">bei jing</address>
+    </companyinfo>
+</school>
